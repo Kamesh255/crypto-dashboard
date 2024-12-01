@@ -6,7 +6,7 @@ import GraphComponent from "./components/GraphComponent";
 import SummaryCard from "./components/SummaryCard";
 import "./App.css";
 
-const Dashboard = () => {
+const Dashboard = ({ theme }) => {
   const { layout, saveLayout } = useContext(CryptoContext);
 
   const handleDragEnd = (result) => {
@@ -35,29 +35,31 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="col-11 m-auto">
-      <div className="d-flex gap-3 align-items-center">
-        <button
-          className="btn btn-outline-primary"
-          onClick={() => addComponent("table")}
-        >
-          Add Table
-        </button>
-        <button
-          className="btn btn-outline-primary"
-          onClick={() => addComponent("graph")}
-        >
-          Add Graph
-        </button>
-        <button
-          className="btn btn-outline-primary"
-          onClick={() => addComponent("card")}
-        >
-          Add Summary Card
-        </button>
+    <div className="">
+      <div style={theme ? { top: "70px", position: 'sticky', background: 'rgb(51,51,51)', transition: '1s', width: '100%',zIndex:5 } : { top: "70px", position: 'sticky', background: 'rgb(51,51,51)', transition: '1s', width: '100%',zIndex:'5' }}> 
+        <div className="col-11 m-auto d-flex gap-3 align-items-center flex-wrap p-2" >
+          <button
+            className="btn btn-outline-light  text-nowrap"  
+            onClick={() => addComponent("table")}
+          >
+            Add Table
+          </button>
+          <button
+            className="btn btn-outline-light  text-nowrap"
+            onClick={() => addComponent("graph")}
+          >
+            Add Graph
+          </button>
+          <button
+            className="btn btn-outline-light text-nowrap"
+            onClick={() => addComponent("card")}
+          >
+            Add Summary Card
+          </button>
+        </div>
       </div>
 
-      <div className="dashboard mt-3">
+      <div className="dashboard">
         <DragDropContext onDragEnd={handleDragEnd}>
           <Droppable droppableId="dashboard" direction="vertical">
             {(provided) => (
@@ -74,23 +76,23 @@ const Dashboard = () => {
                   >
                     {(provided) => (
                       <div
-                        className="draggable-item col-11 m-auto text-start h-100 mt-4"
+                        className="draggable-item col-sm-11 col-12  m-auto text-start h-100 mt-4"
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                       >
                         {component?.type === "table" && <TableComponent />}
-                    
+
                         {component?.type === "graph" && <GraphComponent />}
-                     
+
                         {component?.type === "card" && <SummaryCard />}
                         <button
                           className="btn btn-outline-danger w-auto mt-2"
                           onClick={() => removeComponent(component?.id)}
                         >
                           Remove
-                        </button> 
-                        
+                        </button>
+
                       </div>
                     )}
                   </Draggable>
@@ -100,9 +102,9 @@ const Dashboard = () => {
             )}
           </Droppable>
         </DragDropContext>
-            <br />
+        <br />
       </div>
-      
+
     </div>
   );
 };

@@ -1,6 +1,18 @@
 .App {
   text-align: center;
+  min-height: 100vh;
 } 
+.navbar{
+  display: flex;
+  align-items: center;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  z-index: 5;
+}
 .draggable-item {
   background: #f9f9f9;
   border: 1px solid #ddd;
