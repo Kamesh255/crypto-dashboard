@@ -1,70 +1,70 @@
-# Getting Started with Crypto Dashboard App
+# Configurable Drag-and-Drop Dashboard
 
-This project was bootstrapped with [Crypto Dashboard App](https://crypto-dashboard-ten-gamma.vercel.app/).
+This project is a React-based configurable drag-and-drop dashboard where users can dynamically add, rearrange, and remove components. The dashboard provides a user-friendly interface to customize the layout of the components.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Dynamic Component Management**: Users can add components such as tables, graphs, and summary cards.
+- **Drag-and-Drop Functionality**: Rearrange components easily using drag-and-drop.
+- **Seamless Deletion**: Remove components without leaving gaps in the layout.
+- **Persistent Layout**: The dashboard layout can be saved for future use.
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/drag-drop-dashboard.git
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Navigate to the project directory:
+   cd drag-drop-dashboard
 
-### `npm test`
+3. Install the dependencies:
+   npm start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `npm run build`
+1. Start the development server:
+  npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Open the app in your browser at http://localhost:3000.
+   
+## State Management
+**Context API:**
+CryptoContext.js handles the layout state and provides methods to update it.
+layout (Array): Stores the current arrangement of components.
+saveLayout: Updates the layout with changes such as addition, removal, or rearrangement.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Data Handling
+**Adding Components:**
+New components are added with a unique ID and type (e.g., table, graph, or card).
+The addComponent function updates the layout with the new component.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Removing Components:**
+Components are removed by filtering them out of the layout based on their ID.
+The removeComponent function ensures no gaps are left in the layout.
 
-### `npm run eject`
+**Reordering Components:**
+Drag-and-drop functionality updates the layout using react-beautiful-dnd.
+The handleDragEnd function handles reordering logic.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Layout Logic
+**Adding a New Component:**
+addComponent creates a new object with a unique ID and type.
+The updated array is saved to the layout state.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Reordering Components:**
+handleDragEnd is triggered on drag-and-drop.
+If a valid destination is present, the source component is removed and inserted into the new position.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Deleting Components:**
+removeComponent filters the layout array to exclude the component by its ID.
+The layout re-renders automatically without leaving gaps.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Acknowledgements
+**react-beautiful-dnd** for drag-and-drop functionality.
+**Bootstrap** for styling.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
