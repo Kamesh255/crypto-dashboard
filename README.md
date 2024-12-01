@@ -2,6 +2,8 @@
 
 This project is a React-based configurable drag-and-drop dashboard where users can dynamically add, rearrange, and remove components. The dashboard provides a user-friendly interface to customize the layout of the components.
 
+[Crypto Dashboard](https://crypto-dashboard-ten-gamma.vercel.app/)
+
 ## Features
 
  **Dynamic Component Management**:
