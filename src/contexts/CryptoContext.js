@@ -11,33 +11,32 @@ const CryptoProvider = ({ children }) => {
     return savedLayout ? JSON.parse(savedLayout) : [];
   });
 
-  useEffect(() => {
-    // Poll data every 5 seconds
-    // const interval = setInterval(() => {
-    //   axios
-    //     .get("https://api.coingecko.com/api/v3/coins/markets", {
-    //       params: { vs_currency: "usd" },
-    //     })
-    //     .then((response) => {
-    //       setCryptoData(response.data);
-    //     })
-    //     .catch((error) => {
-    //       console.error("Error fetching crypto data:", error);
-    //     });
-    // }, 100000);
+  useEffect(() => { 
+    const interval = setInterval(() => {
+      axios
+        .get("https://api.coingecko.com/api/v3/coins/markets", {
+          params: { vs_currency: "usd" },
+        })
+        .then((response) => {
+          setCryptoData(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching crypto data:", error);
+        });
+    }, 10000);
 
-    // return () => clearInterval(interval);
+    return () => clearInterval(interval);
 
-    axios
-    .get("https://api.coingecko.com/api/v3/coins/markets", {
-      params: { vs_currency: "usd" },
-    })
-    .then((response) => {
-      setCryptoData(response.data);
-    })
-    .catch((error) => {
-      console.error("Error fetching crypto data:", error);
-    });
+    // axios
+    // .get("https://api.coingecko.com/api/v3/coins/markets", {
+    //   params: { vs_currency: "usd" },
+    // })
+    // .then((response) => {
+    //   setCryptoData(response.data);
+    // })
+    // .catch((error) => {
+    //   console.error("Error fetching crypto data:", error);
+    // });
   }, []);
 
   const saveLayout = (newLayout) => {
