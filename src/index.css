@@ -11,3 +11,43 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.dashboard > div{
+  display: grid;
+  grid-template-columns: 50% 50% !important;
+  gap: 25px;
+}
+
+ 
+
+ 
+
+ 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.summary-card {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+
+@media(max-width :990px){
+  .dashboard > div{
+    display: grid;
+    grid-template-columns: 100% !important;
+  }
+  
+}
