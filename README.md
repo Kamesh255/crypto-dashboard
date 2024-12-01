@@ -68,6 +68,7 @@ The layout re-renders automatically without leaving gaps.
 
 ## Acknowledgements
 **react-beautiful-dnd** for drag-and-drop functionality.
+
 **Bootstrap** for styling.
 
 
