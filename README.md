@@ -4,22 +4,13 @@ This project is a React-based configurable drag-and-drop dashboard where users c
 
 ## Features
 
-- **Dynamic Component Management**:
--
-- Users can add components such as tables, graphs, and summary cards.
-- 
-- **Drag-and-Drop Functionality**:
--
--   Rearrange components easily using drag-and-drop.
-
--   
-- **Seamless Deletion**:
--
--   Remove components without leaving gaps in the layout.
-
--   
-- **Persistent Layout**:
-
+ **Dynamic Component Management**:
+ Users can add components such as tables, graphs, and summary cards.
+**Drag-and-Drop Functionality**:
+Rearrange components easily using drag-and-drop.
+ **Seamless Deletion**:
+ Remove components without leaving gaps in the layout.
+**Persistent Layout**:
 The dashboard layout can be saved for future use.
 
 ## Installation
